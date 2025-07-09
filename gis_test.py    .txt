@@ -1,0 +1,8 @@
+# gis_test.py
+import geopandas as gpd
+from shapely.geometry import Point
+data = {"Name": ["Point A"], "geometry": [Point(-122.4194, 37.7749)]}
+gdf = gpd.GeoDataFrame(data, crs="EPSG:4326")
+print(gdf)
+gdf.to_file("test_point.shp")
+print("Shapefile saved as test_point.shp")
