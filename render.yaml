@@ -1,0 +1,11 @@
+services:
+- type: web
+  name: erosion-control-dash
+  env: python
+  buildCommand: "pip install -r requirements.txt"
+  startCommand: "streamlit run dashboard.py --server.port $PORT --server.address 0.0.0.0"
+  plan: starter
+  envVars:
+    - key: PORT
+      value: 8000
+
